@@ -4,7 +4,7 @@
 A client wants to setup a new instance of Augur.  This process will involve the stress-free installation of the Augur system and the creation of a local database to store the repositories on Ubuntu OS.
 
 ## Triggers 
-A client clones the Augur repository at this [link](http://github.com/chaoss/augur) and beginning the installation process documented [here](https://oss-augur.readthedocs.io/en/main/index.html).
+A client clones the Augur repository at this [link](http://github.com/chaoss/augur) and begins the installation process documented [here](https://oss-augur.readthedocs.io/en/main/index.html).
 
 ## Actors 
 * Client
