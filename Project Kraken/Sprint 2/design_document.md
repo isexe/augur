@@ -30,7 +30,8 @@
 ### Activity Diagram
 ![diagram](./diagrams/AugurViewActivityDiagram.drawio.png)
 
-### Description
+### Description:
+This is the activity diagram for configuring the Augur_view. The activity will go through and check to see if Apache or NGINX is installed on the system and if it is, it will finish setting up the needed things before configuring the proxy for either Apache or NGINX.
 
 <br>
 
