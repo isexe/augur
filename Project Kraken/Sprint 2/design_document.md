@@ -6,12 +6,17 @@
 
 <br>
 
-### Diagram #1
+### Activity Diagram: Dependency Checker
+![diagram](./diagrams/augur_activity_diagram.png)
+<this is how you insert a picture into the md>
+
 ### Description
+(Type a description for the diagram above)
 
 <br>
 
 ### Diagram #2...
+(Should probably include a diagram for the augur auto installer)
 ### Description
 
 <br>
