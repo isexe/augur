@@ -27,7 +27,9 @@
 
 <br>
 
-### Diagram #1
+### Activity Diagram
+![diagram](./diagrams/AugurViewActivityDiagram.drawio.png)
+
 ### Description
 
 <br>
