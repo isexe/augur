@@ -34,10 +34,11 @@ This part of the project is about configuring the Augur_view after the Augur has
 This is the activity diagram for configuring the Augur_view. The activity will go through and check to see if Apache or NGINX is installed on the system and if it is, it will finish setting up the needed things before configuring the proxy for either Apache or NGINX.
 
 <br>
-
+  
 ### Diagram #2...
+![diagram](./diagrams/augur_view_state_diagram.png)
 ### Description
-
+This state diagram shows the flow if the scripts involved in installing and setting up the Augur View. It checks if the machine is on a server or not, and if it is then it will install as system service under systemd and proxy it through the web service. Then it will set up the virutal environment, checks if requirements and packages are installed and then it will run the app.
 <br>
 
 ## Helpful information
