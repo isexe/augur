@@ -35,7 +35,7 @@ This is the activity diagram for configuring the Augur_view. The activity will g
 
 <br>
   
-### Diagram #2...
+### Augur View State Machine Diagram
 ![diagram](./diagrams/augur_view_state_diagram.png)
 ### Description
 This state diagram shows the flow if the scripts involved in installing and setting up the Augur View. It checks if the machine is on a server or not, and if it is then it will install as system service under systemd and proxy it through the web service. Then it will set up the virutal environment, checks if requirements and packages are installed and then it will run the app.
