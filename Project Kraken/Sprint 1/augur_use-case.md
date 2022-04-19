@@ -41,7 +41,7 @@ The client fails to install the Augur system with the provided documentation and
 5. Installation scripts should be useful for beginners.
 
 ## Use Case Diagram
-![Use Case Diagrams](/Sprint1%20Documentation/augur_use-case-diagram.png "use-case-diagram_augur.png")
+![Use Case Diagrams](./augur_use-case-diagram.png "use-case-diagram_augur.png")
 
 ## Dependent Use Cases
 NONE
