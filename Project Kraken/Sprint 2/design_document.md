@@ -7,7 +7,7 @@ This part of the project is about configuring Augur.  The first diagram illustra
 
 <br>
 
-### Activity Diagram: Augur - Dependency Checker Script
+### Activity Diagram: Dependency Checker Script
 ![Augur Activity Diagram](./diagrams/augur_activity_diagram.png)
 
 ### Description
@@ -15,7 +15,7 @@ This activity diagram demonstrates the process of a client preparing for their A
 
 <br>
 
-### Sequence Diagram: Augur - Easy Install Script
+### Sequence Diagram: Easy Install Script
 ![Augur Sequence Diagram](./diagrams/augur_sequence_diagram.png)
 ### Description
 This sequence diagram demonstrates the process of a client installing Augur after the initial setup from the first diagram.  The client runs the easy install script with a few given parameters, then the script sets up the Augur configuration and installs the Augur instance.
@@ -28,15 +28,15 @@ This part of the project is about configuring the Augur_view after the Augur has
 
 <br>
 
-### Augur View Activity Diagram
-![Augur View Activity Diagram](./diagrams/AugurViewActivityDiagram.drawio.png)
+### Activity Diagram: Prepare Augur View Setup
+![Augur View Activity Diagram](./diagrams/augur_view_activity_diagram.png)
 
 ### Description:
 This is the activity diagram for configuring the Augur_view. The activity will go through and check to see if Apache or NGINX is installed on the system and if it is, it will finish setting up the needed things before configuring the proxy for either Apache or NGINX.
 
 <br>
   
-### Augur View State Machine Diagram
+### State Diagram: Install Script
 ![Augur View Activity Diagram](./diagrams/augur_view_state_diagram.png)
 ### Description
-This state diagram shows the flow if the scripts involved in installing and setting up the Augur View. It checks if the machine is on a server or not, and if it is then it will install as system service under systemd and proxy it through the web service. Then it will set up the virutal environment, checks if requirements and packages are installed and then it will run the app.
+This state diagram shows the flow of the scripts involved in installing and setting up the Augur View. It checks if the machine is on a server or not, and if it is then it will install as a system service under systemd and proxy it through the web service. Then it will set up the virtual environment, check if requirements and packages are installed, and then it will run the app.
