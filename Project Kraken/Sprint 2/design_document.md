@@ -23,7 +23,7 @@
 
 ## Augur View
 ### Overview
-This part of the project is about configuring the Augur_view after the Augur has been installed. The first diagram is the activity diagram of the process of configuring the Augur_view
+This part of the project is about configuring the Augur_view after the Augur has been installed. The first diagram is the activity diagram of the process of configuring the Augur_view.
 
 <br>
 
