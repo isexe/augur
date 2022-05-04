@@ -23,7 +23,7 @@ declare -a foundDepArray=()
 # https://gist.github.com/montanaflynn/e1e754784749fd2aaca7#file-check_for_dependencies-sh
 # Insert each required package in this array as string
 # Example array ( "python" "python3" "pip" )
-depArray=( "software-properties-common" ) 
+depArray=( "software-properties-common" "python3-dev" "postgresql" "postgresql-contrib" "postgresql-client" "build-essential" "snapd" "make" "python3-venv" "python-pip-whl" "python3-pip" "pythonpy" )
 
 # Loops through packages and detects if they are missing
 index=0
@@ -31,7 +31,7 @@ for i in "${depArray[@]}"
 do
     foundDepArray[$index]=1
     command -v $i >/dev/null 2>&1 || {
-        # if missing set foundDepArray[index] value to 1
+        # if missing set foundDepArray[index] value to 0
         foundDepArray[$index]=0
     }
     # https://linuxize.com/post/bash-increment-decrement-variable/
@@ -39,7 +39,10 @@ do
 done
 
 echo "--- Dependencies Status ---"
-echo "0 = Missing, 1 = Found"
+echo "Just because it says it is missing doesn't"
+echo "mean it actually is, just a heads up."
+echo "0 = Not Found, 1 = Found"
+echo ""
 
 # loop through dep. array
 index=0
@@ -56,7 +59,7 @@ echo ""
 noResponse () {
     echo "You chose to forgo the automatic installation process."
     echo "You must install these packages for Augur to work properly."
-    echo "Please manually install the dependencies that were missing."
+    echo "Please manually install the dependencies that are missing."
 }
 
 # start installing missing packages
@@ -74,13 +77,23 @@ yesResponse () {
         fi
         ((index+=1))
     done
+
+    # Special dependencies that rely on previous dependencies to install
+
+    command -v "go" >/dev/null 2>&1 || {
+        sudo snap install go --classic
+    }
+    
+    command -v "pip" >/dev/null 2>&1 || {
+        python -m pip install --upgrade pip
+    }
 }
 
 # https://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script
 # Prompts user for valid response
 while true ;
 do
-    echo 'Would you like to install the missing dependencies? (y/n)' 
+    echo 'Would you like to install the *possibly* missing dependencies? (y/n)' 
     read response
     case $response in
         [Yy]* ) echo ""; yesResponse; break;;
