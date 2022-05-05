@@ -1,5 +1,0 @@
-Instructions for Install
-1.Get file "installer.sh" onto your system.
-2.Run the command "sudo chmod +x installer.sh".
-3.Run "source installer.sh" and follow the on screen instructions.
-Notes:The installer was built on ubuntu 20.04 and has not been tested on other operating systems.
