@@ -5,6 +5,7 @@ default:
 	@ echo "    install                         Installs Augur's full stack for production"
 	@ echo "    clean                           Removes potentially troublesome compiled files"
 	@ echo "    rebuild                         Removes build/compiled files & binaries and reinstalls the project"
+	@ echo "    easy-install                    Installs a default version of Augur for demoing purposes"
 	@ echo
 	@ echo "Development Commands:"
 	@ echo "    db                              Initialize a fresh Docker database container (restarts it if it's still running)"
@@ -30,6 +31,7 @@ default:
 .PHONY: install install-dev
 .PHONY: install-spdx install-spdx-sudo install-augur-sbom
 .PHONY: clean rebuild
+.PHONY: easy-install
 install:
 	@ ./scripts/install/install.sh prod
 
@@ -54,6 +56,8 @@ rebuild:
 rebuild-dev:
 	@ scripts/control/rebuild-backend.sh dev
 
+easy-install:
+	@ scripts/install/easy/easy_installer.sh
 
 #
 #  Development
