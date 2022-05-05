@@ -10,10 +10,8 @@ command -v "python3-venv" >/dev/null 2>&1 || {
 }
 
 # Creates virtual environment and enables it
-path=$HOME/.virtualenvs/augur_env
-
-python3 -m venv path
+python3 -m venv $HOME/.virtualenvs/augur_env
 echo "Your virtual environment was setup here:"
-echo "$path"; echo "";
+echo "$HOME/.virtualenvs/augur_env"; echo "";
 
 source $HOME/.virtualenvs/augur_env/bin/activate
