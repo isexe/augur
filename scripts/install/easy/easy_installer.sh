@@ -7,6 +7,7 @@ echo "...Finished"; echo "";
 
 echo "Setting up virtual environment..."
 scripts/install/easy/venv_setup.sh
+source $HOME/.virtualenvs/augur_env/bin/activate
 echo "...Finished"; echo "";
 
 echo "Checking dependencies..."
