@@ -100,8 +100,7 @@ yesResponse () {
 # Prompts user for valid response
 while true ;
 do
-    echo 'Would you like to install the *possibly* missing dependencies? (y/n)' 
-    read response
+    read 'Would you like to install the *possibly* missing dependencies? (y/n)' response
     case $response in
         [Yy]* ) echo ""; yesResponse; break;;
         [Nn]* ) echo ""; noResponse; break;;
