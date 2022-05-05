@@ -57,7 +57,7 @@ rebuild-dev:
 	@ scripts/control/rebuild-backend.sh dev
 
 easy-install:
-	@ scripts/install/easy/easy_installer.sh
+	@ ./scripts/install/easy/easy_installer.sh
 
 #
 #  Development
