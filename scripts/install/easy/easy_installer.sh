@@ -6,8 +6,7 @@ scripts/install/easy/git_setup.sh
 echo "...Finished"; echo "";
 
 echo "Setting up virtual environment..."
-scripts/install/easy/venv_setup.sh
-source $HOME/.virtualenvs/augur_env/bin/activate
+source scripts/install/easy/venv_setup.sh
 echo "...Finished"; echo "";
 
 echo "Checking dependencies..."
