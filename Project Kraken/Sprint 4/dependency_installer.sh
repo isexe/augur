@@ -6,7 +6,8 @@
 
 # https://askubuntu.com/questions/519/how-do-i-write-a-shell-script-to-install-a-list-of-applications
 # reports fails
-set -eu -o pipefail
+# removed e flag to prevent early termination of script with errors from commands
+set -u -o pipefail
 
 # Check sudo status
 # will run program without requiring sudo password.
@@ -19,6 +20,7 @@ test $? -eq 0 || exit 1 "You need sudo privileges to run this script."
 # empty array for missing dependencies
 # will be 1 or 0 to declare that index in depArray is found
 declare -a foundDepArray=()
+declare -a errorArray=()
 
 # https://gist.github.com/montanaflynn/e1e754784749fd2aaca7#file-check_for_dependencies-sh
 # Insert each required package in this array as string
@@ -29,6 +31,7 @@ depArray=( "software-properties-common" "python3-dev" "postgresql" "postgresql-c
 index=0
 for i in "${depArray[@]}"
 do
+    errorArray[$index]=0
     foundDepArray[$index]=1
     command -v $i >/dev/null 2>&1 || {
         # if missing set foundDepArray[index] value to 0
@@ -41,6 +44,8 @@ done
 echo "--- Dependencies Status ---"
 echo "Just because it says it is missing doesn't"
 echo "mean it actually is, just a heads up."
+echo "If a dependency is already installed but not found"
+echo "using the automatic install should not cause any errors."
 echo "0 = Not Found, 1 = Found"
 echo ""
 
@@ -73,7 +78,7 @@ yesResponse () {
         then
             # ...install dep
             # should add parameter that allows -y instead of hard coding it
-            sudo apt-get install -y $i
+            sudo apt-get install -y $i || errorArray[$index]=1
         fi
         ((index+=1))
     done
@@ -87,6 +92,8 @@ yesResponse () {
     command -v "pip" >/dev/null 2>&1 || {
         python -m pip install --upgrade pip
     }
+
+    # may need to add error handling using the error array here 
 }
 
 # https://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script
