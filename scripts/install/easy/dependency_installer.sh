@@ -65,6 +65,7 @@ noResponse () {
     echo "You chose to forgo the automatic installation process."
     echo "You must install these packages for Augur to work properly."
     echo "Please manually install the dependencies that are missing."
+    exit 1
 }
 
 # start installing missing packages
