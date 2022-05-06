@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# !Currently not used
+
 # Checks for python package
 command -v "python3" >/dev/null 2>&1 || {
     sudo apt-get install "python3"
