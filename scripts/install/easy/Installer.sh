@@ -25,6 +25,7 @@ echo "set timeout -1" >> new.sh
 echo "spawn ./database.sh" >> new.sh
 echo 'expect "Password for user postgres:"' >> new.sh
 echo 'send "'"$pass"'\r"' >> new.sh
+echo 'expect eof' >> new.sh
 sudo chmod +x new.sh
 ./new.sh
 sudo -u postgres psql postgres -c "CREATE DATABASE augur;"
