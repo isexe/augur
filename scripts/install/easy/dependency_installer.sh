@@ -86,9 +86,9 @@ yesResponse () {
 
     # Special dependencies that rely on previous dependencies to install
 
-    command -v "go" >/dev/null 2>&1 || {
-        # sudo snap install go --classic
-    }
+    # command -v "go" >/dev/null 2>&1 || {
+    #     sudo snap install go --classic
+    # }
     
     command -v "pip" >/dev/null 2>&1 || {
         python -m pip install --upgrade pip
