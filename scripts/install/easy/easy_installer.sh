@@ -6,6 +6,6 @@ scripts/install/easy/git_setup.sh
 echo "...Finished"; echo "";
 
 echo "Checking dependencies..."
-scripts/install/easy/dependency_installer.sh || exit 1;
+scripts/install/easy/dependency_installer.sh || exit 0;
 # ./dependency_installer.sh
 echo "...Finished"; echo "";
