@@ -3,7 +3,7 @@ cd ~
 mkdir clones
 read -p 'Enter database password: ' pass
 read -p 'Enter valid GitHub API key: ' key
-# sudo apt -y update
+sudo apt -y update
 # sudo apt -y install software-properties-common
 # sudo apt -y make
 # sudo apt -y install postgresql postgresql-contrib
@@ -25,7 +25,7 @@ echo "set timeout -1" >> new.sh
 echo "spawn ./database.sh" >> new.sh
 echo 'expect "Password for user postgres:"' >> new.sh
 echo 'send "'"$pass"'\r"' >> new.sh
-echo 'expect eof' >> new.sh
+# echo 'expect eof' >> new.sh
 sudo chmod +x new.sh
 ./new.sh
 sudo -u postgres psql postgres -c "CREATE DATABASE augur;"
@@ -36,7 +36,7 @@ sudo -u postgres psql postgres -c "GRANT ALL PRIVILEGES ON DATABASE augur TO aug
 # git config --global credential.helper cache
 # git config --global credential.helper 'cache --timeout=9999999999999'
 # git clone https://github.com/chaoss/augur.git
-# cd augur/
+cd augur/
 sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt -y install python3.8
 sudo apt-get -y install python3-venv
