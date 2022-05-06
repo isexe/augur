@@ -3,17 +3,17 @@ cd ~
 mkdir clones
 read -p 'Enter database password: ' pass
 read -p 'Enter valid GitHub API key: ' key
-sudo apt -y update
-sudo apt -y install software-properties-common
-sudo apt -y make
-sudo apt -y install postgresql postgresql-contrib
-sudo apt -y install build-essential
-sudo apt -y install expect
-sudo apt -y install nodejs
-sudo apt -y install npm
-sudo apt -y install firefox-geckodriver
-npm init vue@latest
-npm install -g @vue/cli
+# sudo apt -y update
+# sudo apt -y install software-properties-common
+# sudo apt -y make
+# sudo apt -y install postgresql postgresql-contrib
+# sudo apt -y install build-essential
+# sudo apt -y install expect
+# sudo apt -y install nodejs
+# sudo apt -y install npm
+# sudo apt -y install firefox-geckodriver
+# npm init vue@latest
+# npm install -g @vue/cli
 touch database.sh
 echo "#!/bin/sh" >> database.sh
 echo "sudo -u postgres psql -h localhost -U postgres -p 5432 -c '\q'" >> database.sh
@@ -30,21 +30,21 @@ sudo chmod +x new.sh
 sudo -u postgres psql postgres -c "CREATE DATABASE augur;"
 sudo -u postgres psql postgres -c "CREATE USER augur WITH ENCRYPTED PASSWORD '$pass';"
 sudo -u postgres psql postgres -c "GRANT ALL PRIVILEGES ON DATABASE augur TO augur;"
-git config --global diff.renames true
-git config --global diff.renameLimit 200000
-git config --global credential.helper cache
-git config --global credential.helper 'cache --timeout=9999999999999'
-git clone https://github.com/chaoss/augur.git
-cd augur/
-sudo add-apt-repository -y ppa:deadsnakes/ppa
-sudo apt -y install python3.8
-sudo apt-get -y install python3-venv
+# git config --global diff.renames true
+# git config --global diff.renameLimit 200000
+# git config --global credential.helper cache
+# git config --global credential.helper 'cache --timeout=9999999999999'
+# git clone https://github.com/chaoss/augur.git
+# cd augur/
+# sudo add-apt-repository -y ppa:deadsnakes/ppa
+# sudo apt -y install python3.8
+# sudo apt-get -y install python3-venv
 python3 -m venv $HOME/.virtualenvs/augur_env
 source $HOME/.virtualenvs/augur_env/bin/activate
-sudo apt -y install python3-pip
-sudo apt -y install pythonpy
-python3.8 -m pip install --upgrade pip
-pip install tensorflow==2.5.0
+# sudo apt -y install python3-pip
+# sudo apt -y install pythonpy
+# python3.8 -m pip install --upgrade pip
+# pip install tensorflow==2.5.0
 #pip install git+https://chromium.googlesource.com/external/gyp
 wget -c https://dl.google.com/go/go1.16.2.linux-amd64.tar.gz
 sudo tar -xvf  go1.16.2.linux-amd64.tar.gz 

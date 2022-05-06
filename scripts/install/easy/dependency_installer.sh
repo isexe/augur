@@ -25,7 +25,7 @@ declare -a errorArray=()
 # https://gist.github.com/montanaflynn/e1e754784749fd2aaca7#file-check_for_dependencies-sh
 # Insert each required package in this array as string
 # Example array ( "python" "python3" "pip" )
-depArray=( "software-properties-common" "python3-dev" "postgresql" "postgresql-contrib" "postgresql-client" "build-essential" "snapd" "make" "python-pip-whl" "python3-pip" "pythonpy" )
+depArray=( "software-properties-common" "python3-dev" "postgresql" "postgresql-contrib" "postgresql-client" "build-essential" "snapd" "make" "python3-pip" "pythonpy" "expect" "nodejs" "npm" "firefox-geckodriver")
 
 # Loops through packages and detects if they are missing
 index=0
@@ -93,7 +93,9 @@ yesResponse () {
     command -v "pip" >/dev/null 2>&1 || {
         python -m pip install --upgrade pip
     }
-
+    npm init vue@latest
+    npm install -g @vue/cli
+    pip install tensorflow==2.5.0
     # may need to add error handling using the error array here 
 }
 
