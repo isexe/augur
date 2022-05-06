@@ -95,7 +95,7 @@ yesResponse () {
     }
     npm init vue@latest
     npm install -g @vue/cli
-    pip install tensorflow==2.5.0
+    # pip install tensorflow==2.5.0
     # may need to add error handling using the error array here 
 }
 

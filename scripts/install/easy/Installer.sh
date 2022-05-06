@@ -36,15 +36,15 @@ sudo -u postgres psql postgres -c "GRANT ALL PRIVILEGES ON DATABASE augur TO aug
 # git config --global credential.helper 'cache --timeout=9999999999999'
 # git clone https://github.com/chaoss/augur.git
 # cd augur/
-# sudo add-apt-repository -y ppa:deadsnakes/ppa
-# sudo apt -y install python3.8
-# sudo apt-get -y install python3-venv
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt -y install python3.8
+sudo apt-get -y install python3-venv
 python3 -m venv $HOME/.virtualenvs/augur_env
 source $HOME/.virtualenvs/augur_env/bin/activate
-# sudo apt -y install python3-pip
-# sudo apt -y install pythonpy
-# python3.8 -m pip install --upgrade pip
-# pip install tensorflow==2.5.0
+sudo apt -y install python3-pip
+sudo apt -y install pythonpy
+python3.8 -m pip install --upgrade pip
+pip install tensorflow==2.5.0
 #pip install git+https://chromium.googlesource.com/external/gyp
 wget -c https://dl.google.com/go/go1.16.2.linux-amd64.tar.gz
 sudo tar -xvf  go1.16.2.linux-amd64.tar.gz 
