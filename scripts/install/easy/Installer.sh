@@ -49,7 +49,7 @@ pip install tensorflow==2.5.0
 #pip install git+https://chromium.googlesource.com/external/gyp
 wget -c https://dl.google.com/go/go1.16.2.linux-amd64.tar.gz
 sudo tar -xvf  go1.16.2.linux-amd64.tar.gz 
-# sudo mv go /usr/local
+sudo mv go /usr/local
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/augur
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

@@ -20,7 +20,6 @@ test $? -eq 0 || exit 1 "You need sudo privileges to run this script."
 # empty array for missing dependencies
 # will be 1 or 0 to declare that index in depArray is found
 declare -a foundDepArray=()
-declare -a errorArray=()
 
 # https://gist.github.com/montanaflynn/e1e754784749fd2aaca7#file-check_for_dependencies-sh
 # Insert each required package in this array as string
@@ -79,7 +78,7 @@ yesResponse () {
         then
             # ...install dep
             # should add parameter that allows -y instead of hard coding it
-            sudo apt-get install -y $i || errorArray[$index]=1
+            sudo apt install -y $i
         fi
         ((index+=1))
     done
@@ -90,9 +89,9 @@ yesResponse () {
     #     sudo snap install go --classic
     # }
     
-    command -v "pip" >/dev/null 2>&1 || {
-        python -m pip install --upgrade pip
-    }
+    # command -v "pip" >/dev/null 2>&1 || {
+    #     python -m pip install --upgrade pip
+    # }
     # sudo npm init vue@latest
     # sudo npm install -g @vue/cli
     # sudo pip install tensorflow==2.5.0
