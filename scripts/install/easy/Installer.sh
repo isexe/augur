@@ -11,7 +11,7 @@ read -p 'Enter valid GitHub API key: ' key
 # sudo apt -y install expect
 # sudo apt -y install nodejs
 # sudo apt -y install npm
-# sudo apt -y install firefox-geckodriver
+sudo apt -y install firefox-geckodriver
 npm init vue@latest
 npm install -g @vue/cli
 touch database.sh
