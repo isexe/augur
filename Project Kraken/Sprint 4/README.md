@@ -2,6 +2,13 @@
 
 ## Introduction
 
+
+
+
+
+
+
+
 During this sprint, we wrapped up the development of the scripts.  Unfortunately, due to falling behind schedule, we did not get to develop the documentation of these scripts on the website.  The scripts we added check for dependencies and then install Augur and can be found [here](/scripts/install/easy/).  The make file was altered to add an easy-install option.  Using the 'make easy-install' command, a script will run the dependency_checker script and then the installer script.
 
 ## Issues
