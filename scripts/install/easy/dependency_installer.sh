@@ -93,9 +93,9 @@ yesResponse () {
     command -v "pip" >/dev/null 2>&1 || {
         python -m pip install --upgrade pip
     }
-    sudo npm init vue@latest
-    sudo npm install -g @vue/cli
-    # pip install tensorflow==2.5.0
+    # sudo npm init vue@latest
+    # sudo npm install -g @vue/cli
+    # sudo pip install tensorflow==2.5.0
     # may need to add error handling using the error array here 
 }
 

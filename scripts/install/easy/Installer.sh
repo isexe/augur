@@ -12,8 +12,8 @@ read -p 'Enter valid GitHub API key: ' key
 # sudo apt -y install nodejs
 # sudo apt -y install npm
 # sudo apt -y install firefox-geckodriver
-# npm init vue@latest
-# npm install -g @vue/cli
+npm init vue@latest
+npm install -g @vue/cli
 touch database.sh
 echo "#!/bin/sh" >> database.sh
 echo "sudo -u postgres psql -h localhost -U postgres -p 5432 -c '\q'" >> database.sh
